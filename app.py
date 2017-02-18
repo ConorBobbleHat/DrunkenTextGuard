@@ -5,7 +5,7 @@ import model
 
 t = model.TextBasedClassifier.TextBasedClassifier.TextBasedClassifier()
 df = t.TrainTextBasedClassifier()
-a = model.AylienApi.AylienEmotionClassifier()
+a = model.AylienApi.AylienEmotionClassifier.AylienEmotionClassifier()
 
 @route('/')
 def text():
@@ -13,7 +13,7 @@ def text():
     words = body.split(" ")
 
     num = words.pop(0)
-    body = " ".join(words)
+    body = " ".join(words)   
     resp = twilio.twiml.Response()
 
     emotion = a.getEmotion(body)
