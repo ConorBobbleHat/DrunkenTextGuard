@@ -1,5 +1,6 @@
 from bottle import route, run, template, default_app, request
 import twilio.twiml
+import os
 
 @route('/')
 def text():
@@ -12,4 +13,4 @@ def text():
     resp.message(num)
     return str(resp)
 
-run(host='127.0.0.1',port=8080)
+run(host='0.0.0.0',port=8080)
