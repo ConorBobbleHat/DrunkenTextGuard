@@ -3,8 +3,8 @@ import twilio.twiml
 import os
 import model
 
-t = model.TextBasedClassifier.TextBasedClassifier()
-t.trainText
+t = model.TextBasedClassifier.TextBasedClassifier.TextBasedClassifier()
+df = t.TrainTextBasedClassifier()
 
 @route('/')
 def text():
