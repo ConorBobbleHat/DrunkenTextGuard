@@ -1,4 +1,4 @@
-#from googleplaces import GooglePlaces, types, lang
+from googleplaces import GooglePlaces, types, lang
 import urllib
 
 API_KEY = 'AIzaSyDs7GDvCjik1det8MPxe-RGbEmjq92BHYo'
