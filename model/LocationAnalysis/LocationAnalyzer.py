@@ -6,18 +6,21 @@ RADIUS = 100
 LATITUDE = 53.341116
 LONGITUDE = -6.267396
 
+
 class LocationAnalyzer():
+
     def __init__(self):
         print "Class Initialized"
 
     def VisitedPlaces(self, lat, lng):
-        placesVisited=[]
+        placesVisited = []
 
         google_places = GooglePlaces(API_KEY)
-        location = { 'lat': lat, 'lng': lng}
+        location = {'lat': lat, 'lng': lng}
 
-        query_result = google_places.nearby_search(lat_lng=location, radius=RADIUS)
-        
+        query_result = google_places.nearby_search(
+            lat_lng=location, radius=RADIUS)
+
         placesIds = []
         for place in query_result.places:
             # Returned places from a query are place summaries.
@@ -25,11 +28,11 @@ class LocationAnalyzer():
 
         for placeid in placesIds:
             place_query_result = google_places.get_place(placeid)
-            
+
             placeVisited = {
                 'formatted_address': place_query_result.formatted_address,
                 'place_types': place_query_result.types
-                }
+            }
 
             placesVisited.append(placeVisited)
 
@@ -39,4 +42,4 @@ class LocationAnalyzer():
 lAnalyzer = LocationAnalyzer()
 results = lAnalyzer.VisitedPlaces(LATITUDE, LONGITUDE)
 for result in results:
-    print result,'\t'
+    print result, '\t'
