@@ -5,6 +5,7 @@ import twilio.twiml
 def text():
     body = request.query["Body"]
     words = body.split(" ")
+    
     num = words.pop(0)
     body = " ".join(words)
     resp = twilio.twiml.Response()
