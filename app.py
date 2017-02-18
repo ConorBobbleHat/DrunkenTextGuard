@@ -1,6 +1,10 @@
 from bottle import route, run, template, default_app, request
 import twilio.twiml
 import os
+import model
+
+t = model.TextBasedClassifier.TextBasedClassifier()
+t.trainText
 
 @route('/')
 def text():
