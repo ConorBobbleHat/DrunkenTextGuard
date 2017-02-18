@@ -10,10 +10,10 @@ a = model.AylienApi.AylienEmotionClassifier.AylienEmotionClassifier()
 @route('/')
 def text():
     body = request.query["Body"]
-    words = body.split(" ")
+    #words = body.split(" ")
 
-    num = words.pop(0)
-    body = " ".join(words)   
+    #num = words.pop(0)
+    #body = " ".join(words)   
     resp = twilio.twiml.Response()
 
     emotion = a.getEmotion(body)
