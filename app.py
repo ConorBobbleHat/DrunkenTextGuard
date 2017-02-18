@@ -3,18 +3,13 @@ import twilio.twiml
 
 @route('/')
 def text():
-    body = request.query["Body"]
-    words = body.split(" ")
-    
-    num = words.pop(0)
-    body = " ".join(words)
-    resp = twilio.twiml.Response()
-    resp.message(num)
-    return str(resp)
+    #body = request.query["Body"]
+    #words = body.split(" ")
 
-# This must be added in order to do correct path lookups for the views
-import os
-from bottle import TEMPLATE_PATH
-TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi/views/')) 
+    #num = words.pop(0)
+    #body = " ".join(words)
+    resp = twilio.twiml.Response()
+    resp.message("Hello")
+    return str(resp)
 
 application=default_app()
