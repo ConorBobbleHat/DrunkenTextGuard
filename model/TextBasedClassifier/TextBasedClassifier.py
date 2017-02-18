@@ -87,7 +87,7 @@ df = df.join(dfvoc, how='left')
 #################################### TRAIN MODEL
 from sklearn.ensemble import RandomForestClassifier
 
-MODEL = RandomForestClassifier(n_estimators=200)
+MODEL = RandomForestClassifier(n_estimators=2000)
 
 predictors = [x for x in df.columns if x not in ['message', 'status']]
 MODEL.fit(df[predictors], df['status'])
@@ -131,3 +131,4 @@ def predict(text):
 
 predict('drunk as hell')
 predict('hey buddy, how are you today?')
+predict('hello')
