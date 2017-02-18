@@ -1,4 +1,3 @@
-from googleapiclient.discovery import build
 from googleplaces import GooglePlaces, types, lang
 import urllib
 
