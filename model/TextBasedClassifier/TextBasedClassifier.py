@@ -25,11 +25,11 @@ class TextBasedClassifier():
         #                    ['I AM NOT DRUNK',1]
         #                    ], columns=['message', 'status'])
         
-        df = pd.read_table(os.path.join(DATA_FILE_LOCATION, 'drunk.txt'))
+        df = pd.read_table(os.path.join(self.DATA_FILE_LOCATION, 'drunk.txt'))
         df.columns = ['message']
         df['status']=1
           
-        dfnot = pd.read_table(os.path.join(DATA_FILE_LOCATION, 'not_drunk.txt'))
+        dfnot = pd.read_table(os.path.join(self.DATA_FILE_LOCATION, 'not_drunk.txt'))
         dfnot.columns = ['message']
         dfnot['status']=0
         
@@ -117,7 +117,11 @@ class TextBasedClassifier():
         
 
     def Predict(self, text):
-        model = pickle.load(open(os.path.join(self.DATA_FILE_LOCATION, 'TextBasedClassifier_MODEL'), 'rb'))        
+        try:
+            model = pickle.load(open(os.path.join(self.DATA_FILE_LOCATION, 'TextBasedClassifier_MODEL'), 'rb')) 
+        except:
+            raise Exception("Text Based Model is not trained")
+        
         if self.MODEL is None:
             print 'loading model'
             self.MODEL = model[0] 
