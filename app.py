@@ -12,4 +12,4 @@ def text():
     resp.message("Hello")
     return str(resp)
 
-run(Whost='127.0.0.1',port=8080)
+run(host='127.0.0.1',port=8080)
