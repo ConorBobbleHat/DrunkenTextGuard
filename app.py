@@ -3,7 +3,7 @@ import twilio.twiml
 
 @route('/')
 def text():
-    body = request.query.Body
+    body = request.query["Body"]
     words = body.split(" ")
     num = words.pop(0)
     body = " ".join(words)
