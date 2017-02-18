@@ -17,7 +17,7 @@ def text():
     resp = twilio.twiml.Response()
 
     emotion = a.getEmotion(body)
-    resp.message(str(t.Predict(body)["Prob_0"]) + str(emotion))
+    resp.message(str(t.Predict(body)["Prob_1"]) + str(emotion))
     return str(resp)
 
 run(host='0.0.0.0',port=8080)
