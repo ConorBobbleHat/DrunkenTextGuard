@@ -7,7 +7,6 @@ def text():
     words = body.split(" ")
     num = words.pop(0)
     body = " ".join(words)
-
     resp = twilio.twiml.Response()
     resp.message(num)
     return str(resp)
