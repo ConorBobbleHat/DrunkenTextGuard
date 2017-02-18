@@ -11,14 +11,14 @@ class LocationAnalyzer():
         print "Class Initialized"
 
     def VisitedPlaces(self, lat, lng):
-        placesVisited=[];
+        placesVisited=[]
 
         google_places = GooglePlaces(API_KEY)
         location = { 'lat': lat, 'lng': lng}
 
         query_result = google_places.nearby_search(lat_lng=location, radius=RADIUS)
         
-        placesIds = [];
+        placesIds = []
         for place in query_result.places:
             # Returned places from a query are place summaries.
             placesIds.append(place.place_id)
@@ -29,11 +29,11 @@ class LocationAnalyzer():
             placeVisited = {
                 'formatted_address': place_query_result.formatted_address,
                 'place_types': place_query_result.types
-                };
+                }
 
-            placesVisited.append(placeVisited);
+            placesVisited.append(placeVisited)
 
-        return placesVisited;
+        return placesVisited
 
 
 lAnalyzer = LocationAnalyzer()
