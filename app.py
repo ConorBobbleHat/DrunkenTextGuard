@@ -12,4 +12,4 @@ def text():
     resp.message("Hello")
     return str(resp)
 
-application=default_app()
+run(Whost='127.0.0.1',port=8080)
