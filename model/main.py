@@ -8,7 +8,7 @@ class MainModel():
     def __init__(self):
         pass
     
-    #text = 'test'
+    #text = 'I hate you'
     def predict(self, text):
         
         M1_weight = 0.2
@@ -51,6 +51,11 @@ class MainModel():
         
 
         p = p1 * M1_weight + p2 * M2_weight + p3 * M3_weight
+        if p >0.8:
+            extra_msg += '\n \n YOU ARE TOO DRUNK, MSG BLOCKED'
 
-        return 'There is a {0:.0f}% chance you are drunk!'.format(p*100) + extra_msg
+        retMsg = 'There is a {0:.0f}% chance you are drunk!'.format(p*100) + extra_msg
+        print retMsg
+        
+        return retMsg
 
