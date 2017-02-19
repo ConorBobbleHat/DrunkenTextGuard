@@ -1,11 +1,16 @@
 from bottle import route, run, template, default_app, request
 import twilio.twiml
 import os
-import model
+import model.TextBasedClassifier.TextBasedClassifier as tb
+import model.main as m
 
-t = model.TextBasedClassifier.TextBasedClassifier.TextBasedClassifier()
+
+
+#Only once
+t = tb.TextBasedClassifier()
 df = t.TrainTextBasedClassifier()
-a = model.AylienApi.AylienEmotionClassifier.AylienEmotionClassifier()
+
+#a = model.AylienApi.AylienEmotionClassifier.AylienEmotionClassifier()
 
 @route('/')
 def text():
@@ -15,9 +20,12 @@ def text():
     #num = words.pop(0)
     #body = " ".join(words)   
     resp = twilio.twiml.Response()
-
-    emotion = a.getEmotion(body)
-    resp.message(str(t.Predict(body)["Prob_1"]) + str(emotion))
+    
+    
+    predictor = m.MainModel()
+    prediction = predictor.predict(body) 
+    #emotion = a.getEmotion(body)
+    resp.message(str(prediction)) #+ str(emotion))
     return str(resp)
 
 run(host='0.0.0.0',port=8080)

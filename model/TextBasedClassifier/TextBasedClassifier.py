@@ -13,7 +13,8 @@ class TextBasedClassifier():
     def __init__(self):
         self.MODEL = None
         self.MODEL_FEATURES = ''
-        self.DATA_FILE_LOCATION = os.path.join( (os.path.dirname(os.path.realpath('__file__'))), 'model', 'TextBasedClassifier')
+        self.DATA_FILE_LOCATION = os.path.join( (os.path.dirname(os.path.realpath('__file__'))), 'TextBasedClassifier')
+        print self.DATA_FILE_LOCATION 
     
     
     def _readTrainData(self):
@@ -167,3 +168,6 @@ class TextBasedClassifier():
 #    predict('drunk as hell')
 #    predict('hey buddy, how are you today?')
 #    predict('hello')
+
+
+

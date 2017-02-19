@@ -1,10 +1,16 @@
-from TextBasedClassifier import TextBasedClassifier
+#WD: 'C:\\git\\DrunkenTextGuard\\model'
+import TextBasedClassifier.TextBasedClassifier as tb
 
+class MainModel():
+    
+    def __init__(self):
+        pass
+    
+    def predict(self, text):
+        
+        #Model1: Text Based Classifier
+        m1 = tb.TextBasedClassifier()
+        #m1.TrainTextBasedClassifier() only once
+        p1 = round ( float(m1.Predict(text)["Prob_1"]) ,2 )
 
-class Model():
-    
-    t2=TextBasedClassifier()
-    #call df = t2.TrainTextBasedClassifier() only once
-    s = t2.Predict('I am drunk')
-    print s
-    
+        return 'There is a {0:.0f}% chance you are drunk'.format(p1*100)
