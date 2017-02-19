@@ -128,7 +128,7 @@ class TextBasedClassifier():
             raise Exception("Text Based Model is not trained")
         
         if self.MODEL is None:
-            print 'loading model'
+            print 'Loading model'
             self.MODEL = model[0] 
             self.MODEL_FEATURES = model [1]
 

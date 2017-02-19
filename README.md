@@ -4,14 +4,11 @@ Pitch from the "AI Hackathon: Ireland's First AI Hack - organized by Dublin AI" 
 
 Idea: prevent you from sending Drunk text messages.
 
-Uses Twilio to programmatically make and receive the text messages using its web service APIs. 
+Uses Twilio to programmatically make and receive the text messages using its web service APIs (hosted in Cloud9).
 
 ## Example:
 ![Example](example.png)
 
-## How to Run:
-
-	----
 
 ## Model
 
