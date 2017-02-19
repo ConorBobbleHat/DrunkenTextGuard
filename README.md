@@ -1,6 +1,7 @@
 # DrunkenTextGuard
 
-What is DrunkenTextGuard How to setup Gmail Context Gadget Python pip install contextio pip install bottle Azure Hosting https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-python Ensure you have Azure CLI (v2) installed add voucher (or credit card) to your Amazon Account How to create the model:
+Pitch from the "AI Hackathon: Ireland's First AI Hack - organized by Dublin AI" (https://www.meetup.com/DataScientistsIreland/events/237365278/)
+Idea: prevent you from sending Drunk text messages.
 
 ## Example:
 ![Example](example.png)
