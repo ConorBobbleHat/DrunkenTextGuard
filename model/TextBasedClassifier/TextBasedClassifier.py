@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
@@ -8,14 +9,17 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 
+
 class TextBasedClassifier():
     
     def __init__(self):
         self.MODEL = None
         self.MODEL_FEATURES = ''
-        self.DATA_FILE_LOCATION = os.path.join( (os.path.dirname(os.path.realpath('__file__'))), 'TextBasedClassifier')
-        print self.DATA_FILE_LOCATION 
-    
+        #self.DATA_FILE_LOCATION = os.path.join( (os.path.dirname(os.path.realpath('__file__'))), 'TextBasedClassifier')
+        self.DATA_FILE_LOCATION = os.path.join( os.path.dirname(os.path.abspath(sys.argv[0])), 'model', 'TextBasedClassifier')
+
+    #os.path.dirname(os.path.abspath(sys.argv[0]))
+    #os.getcwd()
     
     def _readTrainData(self):
     
