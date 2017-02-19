@@ -8,7 +8,7 @@ class MainModel():
     def __init__(self):
         pass
     
-    #text = 'I hate you'
+    #text = 'Can I get a lift home'
     def predict(self, text):
         
         M1_weight = 0.2
@@ -22,11 +22,14 @@ class MainModel():
         print 'TextBasedClassifier drunk probability: {}'.format(p1)
         
         
-        TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), 
-                                (53.345211,-6.263378), (53.345211,-6.263378), 
-                                (53.345211,-6.263378), (53.345211,-6.263378), 
-                                (53.345999, -6.265052), (53.345999, -6.265052)]       
-        
+        if 'home' in text:
+            TEST_COORDINATE_LIST  = [(53.345999, -6.265052)]
+        else:
+            TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), 
+                                    (53.345211,-6.263378), (53.345211,-6.263378), 
+                                    (53.345211,-6.263378), (53.345211,-6.263378), 
+                                    (53.334164, -6.244955), (53.345999, -6.265052)]
+            
         lAnalyzer = la.LocationAnalyzer()
         la.TEST_COORDINATE_LIST = TEST_COORDINATE_LIST        
         results = [] # list to hold the list of return values
@@ -52,7 +55,7 @@ class MainModel():
 
         p = p1 * M1_weight + p2 * M2_weight + p3 * M3_weight
         if p >0.8:
-            extra_msg += '\n \n YOU ARE TOO DRUNK, MSG BLOCKED'
+            extra_msg += '\n \nYOU ARE TOO DRUNK, MESSAGE BLOCKED'
 
         retMsg = 'There is a {0:.0f}% chance you are drunk!'.format(p*100) + extra_msg
         print retMsg
