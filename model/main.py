@@ -11,8 +11,9 @@ class MainModel():
     #text = 'test'
     def predict(self, text):
         
-        M1_weight = 0.4
-        M2_weight = 0.6
+        M1_weight = 0.2
+        M2_weight = 0.4
+        M3_weight = 0.4
         
         #Model1: Text Based Classifier
         m1 = tb.TextBasedClassifier()
@@ -21,7 +22,11 @@ class MainModel():
         print 'TextBasedClassifier drunk probability: {}'.format(p1)
         
         
-        TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), (53.345999, -6.265052), (53.345999, -6.265052)]       
+        TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), 
+                                (53.345211,-6.263378), (53.345211,-6.263378), 
+                                (53.345211,-6.263378), (53.345211,-6.263378), 
+                                (53.345999, -6.265052), (53.345999, -6.265052)]       
+        
         lAnalyzer = la.LocationAnalyzer()
         la.TEST_COORDINATE_LIST = TEST_COORDINATE_LIST        
         results = [] # list to hold the list of return values
@@ -31,21 +36,21 @@ class MainModel():
             result = lAnalyzer.VisitedPlaces(lat,lon)
             results.append(result)
         p2 = np.average(results)
-        print 'Geolocation results: {}'.format(results)
+        print 'Geolocation results: {}'.format(p2)
         
         
         
         emotionGetter = aly.AylienEmotionClassifier()
         my_emotion_score = emotionGetter.getEmotion(text)        
         print 'Emontion Score: {}'.format(my_emotion_score)
-        p3 = 0
+        p3 = my_emotion_score[1]
+        
         extra_msg = ''
-        if str(my_emotion_score[0]) in ['anger', 'hate', 'worry'] and my_emotion_score[1]>0.5:
-            p3 = 0.1
+        if str(my_emotion_score[0]) in ['anger', 'hate'] and my_emotion_score[1]>0.5:
             extra_msg = ' I also believe you are expressing {}'.format(str(my_emotion_score[0]))
         
 
-        p = p1 * M1_weight + p2 * M2_weight + p3
+        p = p1 * M1_weight + p2 * M2_weight + p3 * M3_weight
 
         return 'There is a {0:.0f}% chance you are drunk!'.format(p*100) + extra_msg
-    
+
