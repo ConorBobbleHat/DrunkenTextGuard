@@ -1,11 +1,17 @@
 # DrunkenTextGuard
 
 Pitch from the "AI Hackathon: Ireland's First AI Hack - organized by Dublin AI" (https://www.meetup.com/DataScientistsIreland/events/237365278/)
+
 Idea: prevent you from sending Drunk text messages.
+
+Uses Twilio to programmatically make and receive the text messages using its web service APIs. 
 
 ## Example:
 ![Example](example.png)
 
+## How to Run:
+
+	----
 
 ## Model
 
