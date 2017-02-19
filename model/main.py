@@ -8,7 +8,7 @@ class MainModel():
     def __init__(self):
         pass
     
-    #text = 'Can I get a lift home'
+    #text = 'home fancy some drinks'
     def predict(self, text):
         
         M1_weight = 0.2
