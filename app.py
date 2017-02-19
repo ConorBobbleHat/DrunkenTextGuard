@@ -5,16 +5,19 @@ import model
 
 t = model.TextBasedClassifier.TextBasedClassifier.TextBasedClassifier()
 df = t.TrainTextBasedClassifier()
+a = model.AylienApi.AylienEmotionClassifier.AylienEmotionClassifier()
 
 @route('/')
 def text():
     body = request.query["Body"]
-    words = body.split(" ")
+    #words = body.split(" ")
 
-    num = words.pop(0)
-    body = " ".join(words)
+    #num = words.pop(0)
+    #body = " ".join(words)   
     resp = twilio.twiml.Response()
-    resp.message(num)
+
+    emotion = a.getEmotion(body)
+    resp.message(str(t.Predict(body)["Prob_1"]) + str(emotion))
     return str(resp)
 
 run(host='0.0.0.0',port=8080)

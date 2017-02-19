@@ -23,9 +23,10 @@ class AylienEmotionClassifier():
         data = json.loads(result)
         emotionScore = (data["categories"][0]['id'], data["categories"][0]['confidence'])
 
-        return emotionScore;
+        return emotionScore
 
 
-emotionGetter = AylienEmotionClassifier()
-my_emotion_score = emotionGetter.getEmotion("I really like you!!!!")
-print my_emotion_score
+if(__name__ == "main"):
+    emotionGetter = AylienEmotionClassifier()
+    my_emotion_score = emotionGetter.getEmotion("I hate you")
+    print my_emotion_score
