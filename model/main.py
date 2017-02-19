@@ -8,18 +8,17 @@ class MainModel():
     def __init__(self):
         pass
     
-    text = 'I HATE YOU'
+    #text = 'test'
     def predict(self, text):
         
-        M1_weight = 0.5
-        M2_weight = 0.5
+        M1_weight = 0.4
+        M2_weight = 0.6
         
         #Model1: Text Based Classifier
         m1 = tb.TextBasedClassifier()
         #m1.TrainTextBasedClassifier() only once
-        p1 = round ( float(m1.Predict(text)["Prob_1"]) ,2 )
-                
-        print '------'
+        p1 = round ( float(m1.Predict(text)["Prob_1"]) ,2 )                
+        print 'TextBasedClassifier drunk probability: {}'.format(p1)
         
         
         TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), (53.345999, -6.265052), (53.345999, -6.265052)]       
@@ -32,13 +31,16 @@ class MainModel():
             result = lAnalyzer.VisitedPlaces(lat,lon)
             results.append(result)
         p2 = np.average(results)
+        print 'Geolocation results: {}'.format(results)
+        
         
         
         emotionGetter = aly.AylienEmotionClassifier()
         my_emotion_score = emotionGetter.getEmotion(text)        
+        print 'Emontion Score: {}'.format(my_emotion_score)
         p3 = 0
         extra_msg = ''
-        if str(my_emotion_score[0]) in ['anger', 'hate', 'worry']:
+        if str(my_emotion_score[0]) in ['anger', 'hate', 'worry'] and my_emotion_score[1]>0.5:
             p3 = 0.1
             extra_msg = ' I also believe you are expressing {}'.format(str(my_emotion_score[0]))
         
