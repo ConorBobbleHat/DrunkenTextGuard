@@ -21,7 +21,6 @@ def text():
     #body = " ".join(words)   
     resp = twilio.twiml.Response()
     
-    
     predictor = m.MainModel()
     prediction = predictor.predict(body) 
     #emotion = a.getEmotion(body)

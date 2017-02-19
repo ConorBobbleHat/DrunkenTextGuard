@@ -19,7 +19,7 @@ class MainModel():
         #m1.TrainTextBasedClassifier() only once
         p1 = round ( float(m1.Predict(text)["Prob_1"]) ,2 )
                 
-        
+        print '------'
         
         
         TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), (53.345999, -6.265052), (53.345999, -6.265052)]       

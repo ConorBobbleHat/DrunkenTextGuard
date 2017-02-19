@@ -1,7 +1,7 @@
 import model.TextBasedClassifier.TextBasedClassifier as tb
 import model.main as m
 import model.LocationAnalysis.LocationAnalyzer as la
-
+import model.AylienApi.AylienEmotionClassifier as aly
 
 #Only once
 t = tb.TextBasedClassifier()
@@ -34,3 +34,7 @@ for coordinate in TEST_COORDINATE_LIST:
 #for result in results:
 #    print result, '\t'
 print results
+
+
+
+
