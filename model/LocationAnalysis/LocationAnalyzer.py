@@ -2,9 +2,9 @@ from googleplaces import GooglePlaces, types, lang
 import urllib
 
 API_KEY = 'AIzaSyDs7GDvCjik1det8MPxe-RGbEmjq92BHYo'
-RADIUS = 100
-LATITUDE = 53.341116
-LONGITUDE = -6.267396
+RADIUS = 20
+LATITUDE = 53.345211
+LONGITUDE = -6.263378
 
 
 class LocationAnalyzer():
