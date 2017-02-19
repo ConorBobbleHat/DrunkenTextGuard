@@ -5,6 +5,7 @@ from aylienapiclient import textapi
 
 
 class AylienEmotionClassifier():
+    
     def __init__(self):
         print "## Aylien initialized"
 

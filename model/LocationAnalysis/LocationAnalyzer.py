@@ -6,7 +6,7 @@ RADIUS = 20
 #LATITUDE = 53.345211
 #LONGITUDE = -6.263378
 ZERO = 0
-TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), (53.345999, -6.265052), (53.345999, -6.265052)]
+#TEST_COORDINATE_LIST = [(53.345211,-6.263378), (53.345211,-6.263378), (53.345999, -6.265052), (53.345999, -6.265052)]
 # Define a dictionary with search term and return score
 dic_place_types_scores = {'bar':1, 'restaurant':0.5}
 PlaceTypeList = ['bar','restaurant'] # this list needs to be in order of most interest
@@ -15,7 +15,7 @@ PlaceTypeList = ['bar','restaurant'] # this list needs to be in order of most in
 class LocationAnalyzer():
 
     def __init__(self):
-        print "Class Initialized"
+        pass#print "Class Initialized"
 
     def VisitedPlaces(self, lat, lng):
         placesVisited = []
@@ -62,16 +62,16 @@ class LocationAnalyzer():
         return ZERO
 
 
-lAnalyzer = LocationAnalyzer()
-#results = lAnalyzer.VisitedPlaces(LATITUDE, LONGITUDE)
-results = [] # list to hold the list of return values
-# Iterate through our list of coordinates
-for coordinate in TEST_COORDINATE_LIST:
-    #result = lAnalyzer.VisitedPlaces(LATITUDE, LONGITUDE)
-    lat = coordinate[0]
-    lon = coordinate[1]
-    result = lAnalyzer.VisitedPlaces(lat,lon)
-    results.append(result)
-#for result in results:
-#    print result, '\t'
-print results
+#lAnalyzer = LocationAnalyzer()
+##results = lAnalyzer.VisitedPlaces(LATITUDE, LONGITUDE)
+#results = [] # list to hold the list of return values
+## Iterate through our list of coordinates
+#for coordinate in TEST_COORDINATE_LIST:
+#    #result = lAnalyzer.VisitedPlaces(LATITUDE, LONGITUDE)
+#    lat = coordinate[0]
+#    lon = coordinate[1]
+#    result = lAnalyzer.VisitedPlaces(lat,lon)
+#    results.append(result)
+##for result in results:
+##    print result, '\t'
+#print results
