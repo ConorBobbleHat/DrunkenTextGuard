@@ -16,7 +16,7 @@ Darren Gilligan: https://github.com/oakdale2008
 Diego Menin: https://github.com/dmenin
 Conor Brown: https://github.com/2BoysAndHats
 Henrique Zacchi: https://github.com/hzacchi
-Kyle Truebody: 
+Kyle Truebody: https://github.com/KyleT082
 Pádraig Mac Donnchadha https://github.com/padraigfmac
 Paul Browne: https://github.com/paulbrowne-irl
 
